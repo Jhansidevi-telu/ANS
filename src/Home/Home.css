@@ -23,22 +23,59 @@
   width: 100%;
   height: 620px;
 }
+.service-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden; /* Ensures the image does not overflow the card */
+  transition: transform 0.3s; /* Optional: Smooth transition for hover effect */
+}
+
+.card-img-top {
+  width: 100%; /* Ensures the image fills the width of the card */
+  height: 320px; /* Adjust height as needed */
+  object-fit: cover; /* Ensures the image covers the card */
+  transition: filter 0.3s; /* Smooth transition for filter */
+}
+
+.card-body {
+  position: absolute;
+  bottom: 0; /* Positions the title at the bottom of the card */
+  left: 0;
+  right: 0;
+  color: white;
+  padding: 10px; /* Padding for title */
+  text-align: center; /* Center-align the title */
+  transition: transform 0.3s; /* Smooth transition for title */
+}
+
+/* Hover effect */
+.service-card:hover .card-img-top {
+  filter: blur(3px) brightness(0.9);
+}
+
+.service-card:hover .card-body {
+  transform: translateY(-50%);
+  top: 50%; /* Center vertically */
+  background-color: transparent;
+  color: white;
+}
+
 .section-title {
   font-family: "Abril Fatface", serif;
 }
-.contentFont{
+.contentFont {
   font-family: "Jost", sans-serif;
 }
-.border-color{
-  border-left: 5px solid #8ac027
+.border-color {
+  border-left: 5px solid #8ac027;
 }
-.text-color{
+.text-color {
   color: #8ac027;
 }
-.button-color{
-background-color: #8ac027;
+.button-color {
+  background-color: #8ac027;
 }
-.service-item {
+/* .service-item {
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
   transition: 0.5s;
 }
@@ -50,9 +87,78 @@ background-color: #8ac027;
 }
 .service-item:hover * {
   color: white !important;
+} */
+
+.service-card1 {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  background: #f8fdee; /* Initial card background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 15px;
+  cursor: pointer;
+  overflow: hidden; /* Hide overflow for pseudo-elements */
+  transition: background 0.5s; /* Smooth background transition */
 }
 
-.testimonials__grid {
+.service-card1::before,
+.service-card1::after {
+  position: absolute;
+  content: "";
+  width: 20%;
+  height: 20%;
+  background-color: #8ac027; /* Initial background color for pseudo-elements */
+  transition: all 0.5s;
+  z-index: 0; /* Ensure pseudo-elements are behind the text */
+}
+
+.service-card1::before {
+  top: 0;
+  right: 0;
+  border-radius: 0 15px 0 100%; /* Rounded corners */
+}
+
+.service-card1::after {
+  bottom: 0;
+  left: 0;
+  border-radius: 0 100% 0 15px; /* Rounded corners */
+}
+
+.service-card1:hover::before,
+.service-card1:hover::after {
+  width: 100%; /* Expand background on hover */
+  height: 100%;
+  border-radius: 15px; /* Full rounding */
+  background-color: #8ac027; /* Change background color on hover */
+  transition: all 0.5s; /* Smooth transition */
+}
+
+.service-card1 .card-content {
+  position: relative; /* Ensure text is positioned above pseudo-elements */
+  z-index: 1; /* Ensure the text stays above the hover background */
+  color: #0e0e0e; /* White text */
+  padding: 10px;
+}
+.service-card1 .card-content h5 {
+  font-size: 20px;
+  color: #0e0e0e; /* White text */
+}
+.service-card1 .card-content p {
+  font-size: 16px;
+  margin-top:20px;
+  font-weight: 400;
+  color: #0e0e0e; /* White text */
+}
+
+.service-card1:hover .card-content {
+  opacity: 1; /* Keep text fully visible on hover */
+}
+
+/* .testimonials__grid {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -102,7 +208,7 @@ background-color: #8ac027;
 
 .section__container .card .name:hover {
   color: var(--primary-color);
-}
+} */
 
 @media (width < 900px) {
   .testimonials__grid {

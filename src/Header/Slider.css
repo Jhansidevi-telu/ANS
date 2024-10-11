@@ -1,0 +1,74 @@
+.card-wrapper {
+    padding: 15px;
+    margin: 0 10px; /* Add horizontal margin to create space between cards */
+  }
+
+.card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card p {
+  font-size: 1.1rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+.card .ri-double-quotes-l {
+  font-size: 1.5rem;
+  color: #888;
+}
+
+.card .ri-star-fill {
+  color: #FFD700;
+  font-size: 1.5rem;
+}
+
+.card hr {
+  margin: 10px 0;
+}
+
+.name {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Carousel Dots */
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #333;
+}
+
+.slick-prev, .slick-next {
+  color: #333;
+}
+
+.slick-prev:before, .slick-next:before {
+  font-size: 24px;
+  color: #333;
+}
+
+/* Adjust arrow position */
+.slick-prev {
+  left: -35px;
+}
+
+.slick-next {
+  right: -35px;
+}
+
+/* Responsive for small screens */
+@media (max-width: 576px) {
+  .card {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}

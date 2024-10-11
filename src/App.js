@@ -3,7 +3,6 @@ import Gallery from "./gallery/Gallery";
 import Header from "./Header/Header";
 import Home from "./Home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +21,7 @@ function App() {
         />
       </Routes>
     </BrowserRouter>
+    // <SliderDown/>
   );
 }
 

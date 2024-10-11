@@ -9,9 +9,12 @@ import {
 } from "react-icons/fa";
 
 import g5 from "../assets/g5.jpg";
+import img1 from "../assets/img1.jpg";
+import videoSrc from "../assets/home-video.mp4";
 import Header from "../Header/Header";
 import "../Header/Header.css";
 import "./Home.css";
+import SliderDown from "../Header/Slider";
 
 const Home = () => {
   return (
@@ -21,7 +24,7 @@ const Home = () => {
           <Header />
         </div>
         {/*Carousel*/}
-        <div
+        {/* <div
           id="carouselExampleInterval"
           className="carousel slide"
           data-bs-ride="carousel"
@@ -58,6 +61,12 @@ const Home = () => {
             ></span>
             <span className="visually-hidden">Next</span>
           </button>
+        </div> */}
+        <div className="video-container">
+          <video className="d-block w-100" autoPlay loop muted>
+            <source src={videoSrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
         {/*About*/}
         <div class="container-xxl py-5">
@@ -121,13 +130,15 @@ const Home = () => {
                 </p>
                 <div class="row g-4 mb-4">
                   <div class="col-sm-6">
-                    <div class="d-flex algin-items-center border-color px-3" >
+                    <div class="d-flex algin-items-center border-color px-3">
                       <h1 class="flex-shrink-0 dispaly-5 text-color mb-0 ">
                         5
                       </h1>
                       <div class="ps-4">
                         <p class="mb-0 contentFont">Years of</p>
-                        <h6 class="text-uppercase mb-0 contentFont">Experience</h6>
+                        <h6 class="text-uppercase mb-0 contentFont">
+                          Experience
+                        </h6>
                       </div>
                     </div>
                   </div>
@@ -143,7 +154,10 @@ const Home = () => {
                     </div>
                   </div>
                 </div>
-                <a href="" class="btn button-color text-white fs-6 py-3 px-5 mt-2 contentFont">
+                <a
+                  href=""
+                  class="btn button-color text-white fs-6 py-3 px-5 mt-2 contentFont"
+                >
                   {" "}
                   Read More{" "}
                 </a>
@@ -154,46 +168,66 @@ const Home = () => {
 
         {/* Organized */}
         <div className="bg-body-tertiary py-5">
-          <h1 className="text-center mb-4">We Serve</h1>
+          <h1 className="text-center mb-4 section-title text-color">Our Services</h1>
+          <h3 className="text-center mb-4 contentFont">
+            Explore our diverse offerings to create a seamless event experience
+          </h3>
           <div className="container">
             <div className="row">
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="card">
-                  <img src={g5} className="card-img-top" alt="Service 1" />
+                <div className="service-card d-flex flex-column">
+                  <img
+                    src={img1}
+                    className="card-img-top flex-fill"
+                    alt="Service 1"
+                  />
                   <div className="card-body text-center">
-                    <h5 className="card-title">Service Title 1</h5>
+                    <h5 className="card-title section-title ">Service Title 1</h5>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="card">
-                  <img src={g5} className="card-img-top" alt="Service 2" />
+                <div className="service-card d-flex flex-column">
+                  <img
+                    src={img1}
+                    className="card-img-top flex-fill"
+                    alt="Service 2"
+                  />
                   <div className="card-body text-center">
-                    <h5 className="card-title">Service Title 2</h5>
+                    <h5 className="card-title section-title">Service Title 2</h5>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="card">
-                  <img src={g5} className="card-img-top" alt="Service 3" />
+                <div className="service-card d-flex flex-column">
+                  <img
+                    src={img1}
+                    className="card-img-top flex-fill"
+                    alt="Service 3"
+                  />
                   <div className="card-body text-center">
-                    <h5 className="card-title">Service Title 3</h5>
+                    <h5 className="card-title section-title ">Service Title 3</h5>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
-                <div className="card">
-                  <img src={g5} className="card-img-top" alt="Service 4" />
+                <div className="service-card d-flex flex-column">
+                  <img
+                    src={g5}
+                    className="card-img-top flex-fill"
+                    alt="Service 4"
+                  />
                   <div className="card-body text-center">
-                    <h5 className="card-title">Service Title 4</h5>
+                    <h5 className="card-title section-title">Service Title 4</h5>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
         {/*Services*/}
-        <div class="container-xxl py-5">
+        {/* <div class="container-xxl py-5">
           <div class="container">
             <div class="row g-4">
               <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -242,9 +276,100 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div> */}
+
+        <div className="container-xxl py-1 bg-light align-items-center pb-5">
+          <div className="container">
+            <h3 className="text-center mb-5 content-title ">Our Commitment to Excellence</h3>
+            <div className="row g-4 justify-content-center">
+              {/* Master Chefs Section */}
+              <div
+                className="col-lg-3 col-sm-6 wow fadeInUp"
+                data-wow-delay="0.1s"
+              >
+                <div className="service-card1">
+                  <div className="text-center">
+                    {/* <i className="fa fa-user-chef fa-3x"></i> */}
+                    <div className="card-content">
+                      <h5 className="section-title">
+                        Master Chefs at Your Service
+                      </h5>
+                      <p className="contentFont">
+                        Our team of world-class chefs brings passion and
+                        creativity to the table, crafting gourmet meals that
+                        delight every palate.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Quality Food Section */}
+              <div
+                className="col-lg-3 col-sm-6 wow fadeInUp"
+                data-wow-delay="0.2s"
+              >
+                <div className="service-card1">
+                  <div className="text-center">
+                    {/* <i className="fa fa-utensils fa-3x"></i> */}
+                    <div className="card-content">
+                      <h5 className="section-title">
+                        Fresh & Quality Ingredients
+                      </h5>
+                      <p className="contentFont">
+                        We source the finest, freshest ingredients to ensure
+                        every dish bursts with flavor, guaranteeing an
+                        unforgettable culinary experience.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Customizable Events Section */}
+              <div
+                className="col-lg-3 col-sm-6 wow fadeInUp"
+                data-wow-delay="0.3s"
+              >
+                <div className="service-card1">
+                  <div className="text-center">
+                    {/* <i className="fa fa-calendar-alt fa-3x"></i> */}
+                    <div className="card-content">
+                      <h5 className="section-title">Tailored Event Planning</h5>
+                      <p className="contentFont">
+                        From intimate gatherings to large-scale events, we
+                        tailor our services to meet your vision and ensure
+                        flawless execution.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* 24/7 Support Section */}
+              <div
+                className="col-lg-3 col-sm-6 wow fadeInUp"
+                data-wow-delay="0.4s"
+              >
+                <div className="service-card1">
+                  <div className="text-center">
+                    {/* <i className="fa fa-headset fa-3x"></i> */}
+                    <div className="card-content">
+                      <h5 className="section-title">Round-the-Clock Support</h5>
+                      <p className="contentFont">
+                        Our dedicated team is available 24/7 to provide seamless
+                        support, ensuring your event runs smoothly from start to
+                        finish.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         {/*Testimonials*/}
-        <div className="container-xxl p-0">
+        {/* <div className="container-xxl p-0">
           <div className="container">
             <div className="section__container">
               <div className="text-center wow fadeInUp">
@@ -262,7 +387,7 @@ const Home = () => {
                 data-bs-pause="hover" // Pause on hover
               >
                 <div className="carousel-inner">
-                  {/* First group of 3 testimonials */}
+                  
                   <div className="carousel-item active">
                     <div className="row">
                       <div className="col-md-4">
@@ -331,7 +456,6 @@ const Home = () => {
                     </div>
                   </div>
 
-                  {/* Second group of 3 testimonials */}
                   <div className="carousel-item">
                     <div className="row">
                       <div className="col-md-4">
@@ -426,8 +550,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
-
+        </div> */}
+        <SliderDown />
         {/* Contact */}
         <div className="container-xxl p-0 mt-4">
           <div className="container">

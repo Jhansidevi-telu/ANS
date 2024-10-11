@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Gallery.css";
 import image1 from "../assets/img1.jpg";
 import image2 from "../assets/img2.jpg";
 import image3 from "../assets/img3.jpg";
 import image4 from "../assets/img4.jpg";
 import image5 from "../assets/img5.webp";
-import bannerImg from "../assets/gallery-banner.jpg"; // Import your banner image here
+import singleVideo from "../assets/20756701-hd_1920_1080_25fps.mp4"; // Update this with your video file path
 
 const Gallery = () => {
   const data = [
@@ -22,6 +22,8 @@ const Gallery = () => {
 
   const [model, setModel] = useState(false);
   const [tempimgSrc, setTempImgSrc] = useState("");
+  
+  const videoRef = useRef(null);
 
   const getImg = (imgSrc) => {
     setModel(true);
@@ -32,11 +34,22 @@ const Gallery = () => {
     setModel(false);
   };
 
+  useEffect(() => {
+    const videoElement = videoRef.current;
+
+    if (videoElement) {
+      videoElement.play();
+    }
+  }, []);
+
   return (
     <>
-      {/* Banner section */}
+      {/* Banner section with the single video */}
       <div className="banner">
-        <img src={bannerImg} alt="Gallery Banner" className="banner-img" />
+        <video className="banner-video" ref={videoRef} autoPlay muted loop>
+          <source src={singleVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <h1 className="banner-text">Welcome to the Image Gallery</h1>
       </div>
 
