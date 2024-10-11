@@ -9,7 +9,6 @@ import {
 } from "react-icons/fa";
 
 import g5 from "../assets/g5.jpg";
-import logo from "../assets/ANSLogo.png";
 import Header from "../Header/Header";
 import "../Header/Header.css";
 import "./Home.css";
@@ -98,50 +97,53 @@ const Home = () => {
                 </div>
               </div>
               <div class="col-lg-6">
-                <h5 class="section-title ff-secondary text-start text-warning fw-normal">
+                <h4 class="  section-title text-color ff-secondary text-start  fw-normal">
                   About Us
-                </h5>
-                <h1 class="mb-4">
-                  Welcome to
-                  <i class="fa fa-utensils text-warning me-2"></i>Restaurant
+                </h4>
+                <h1 class="section-title mb-4">
+                  Welcome to Anusha Catering & Suppliers
                 </h1>
-                <p class="mb-4">
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Incidunt culpa odio ex doloremque deleniti temporibus alias
-                  iure cum laborum eaque?
+                <p class=" contentFont mb-4">
+                  Catering is the art of providing food and bevarge services to
+                  a group of people for an event, occasion, or gathering. The
+                  success of any event depends on the quality of food and
+                  beverage served, and the overall experience it offers to the
+                  guests. Catering services must be tailored to meet the
+                  specific needs of each event, and a good catering.
                 </p>
-                <p class="mb-4">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Asperiores ducimus officiis sed architecto nemo, natus
-                  provident! Temporibus ullam, voluptatibus doloremque
-                  reiciendis consectetur cum minus iste voluptatum doloribus
-                  mollitia earum! Eaque.
+                <p class=" contentFont mb-4">
+                  We provide high-quality, customizable catering options to suit
+                  any event, from intimate gatherings to large scale
+                  celebrations. We also supply essential event quipment like
+                  tent houses, lighting and more to ensure every occasion is
+                  perfectly excuted. We serve to make every event not just
+                  successful but truly memorable for our clients.
                 </p>
                 <div class="row g-4 mb-4">
                   <div class="col-sm-6">
-                    <div class="d-flex algin-items-center border-start border-5 border-warning px-3">
-                      <h1 class="flex-shrink-0 dispaly-5 text-warning mb-0">
-                        15
+                    <div class="d-flex algin-items-center border-color px-3" >
+                      <h1 class="flex-shrink-0 dispaly-5 text-color mb-0 ">
+                        5
                       </h1>
                       <div class="ps-4">
-                        <p class="mb-0">Years of</p>
-                        <h6 class="text-uppercase mb-0">Experience</h6>
+                        <p class="mb-0 contentFont">Years of</p>
+                        <h6 class="text-uppercase mb-0 contentFont">Experience</h6>
                       </div>
                     </div>
                   </div>
                   <div class="col-lg-6">
-                    <div class="d-flex algin-items-center border-start border-5 border-warning px-3">
-                      <h1 class="flex-shrink-0 dispaly-5 text-warning mb-0">
-                        50
+                    <div class="d-flex algin-items-center border-color px-3">
+                      <h1 class="flex-shrink-0 dispaly-5 text-color mb-0">
+                        50+
                       </h1>
                       <div class="ps-4">
-                        <p class="mb-0">Popular</p>
-                        <h6 class="text-uppercase mb-0">Master Chefs</h6>
+                        <p class="mb-0 contentFont">Popular</p>
+                        <h6 class="text-uppercase mb-0 contentFont">Dishes</h6>
                       </div>
                     </div>
                   </div>
                 </div>
-                <a href="" class="btn btn-warning py-3 px-5 mt-2">
+                <a href="" class="btn button-color text-white fs-6 py-3 px-5 mt-2 contentFont">
                   {" "}
                   Read More{" "}
                 </a>
@@ -270,8 +272,7 @@ const Home = () => {
                           </span>
                           <p>
                             The food here is absolutely amazing! The flavors
-                            were authentic.
-                            I'll definitely be coming back.
+                            were authentic. I'll definitely be coming back.
                           </p>
                           <span className="text-center">
                             <i className="ri-star-fill fs-4"></i>
@@ -291,8 +292,8 @@ const Home = () => {
                             <i className="ri-double-quotes-l"></i>
                           </span>
                           <p>
-                            The service at this restaurant is outstanding. I was treated like royalty.
-                            Highly recommend it!
+                            The service at this restaurant is outstanding. I was
+                            treated like royalty. Highly recommend it!
                           </p>
                           <span className="text-center">
                             <i className="ri-star-fill fs-4"></i>
