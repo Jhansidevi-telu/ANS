@@ -11,8 +11,8 @@ const Header = () => {
     <div className={`header ${isHome ? "home-header" : "other-header"}`}>
       <div className={`contact-info pt-2 d-none d-lg-block ${isHome ? "text-white" : "text-black"}`}> 
         <p className={`pl-2 ms-4 ${isHome ? "text-white" : "text-black"}`}>
-          <strong>Phone:</strong> +1 (234) 567-8901 | <strong>Email:</strong>{" "}
-          info@example.com
+          <strong>Phone:</strong> +91 9949319515 | <strong>Email:</strong>{" "}
+          prasadpothina1@gmail.com
         </p>
         <hr className="divider"/>
       </div>

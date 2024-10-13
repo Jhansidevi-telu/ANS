@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
+
 const reviews = [
   {
     id: 1,
@@ -37,6 +38,8 @@ const reviews = [
 ];
 
 const SliderDown = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   const settings = {
     dots: true,
     arrows: true,
@@ -44,23 +47,24 @@ const SliderDown = () => {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true, // Enable autoplay
+    autoplay: true,
     autoplaySpeed: 3000,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
     responsive: [
       {
-        breakpoint: 1024, // Medium screens (tablets)
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 600, // Small screens (mobile)
+        breakpoint: 600,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots: true,
-          arrows: false, // Hide arrows on mobile for a clean UI
+          arrows: false,
         },
       },
     ],
@@ -70,23 +74,30 @@ const SliderDown = () => {
     <div className="container">
       <h2>Customer Reviews</h2>
       <Slider {...settings}>
-        {reviews.map((review) => (
-          <div key={review.id} className="card-wrapper">
-            <div className="card">
-              <span>
-                <i className="ri-double-quotes-l text-warning"></i>
-              </span>
-              <p>{review.text}</p>
-              <span className="text-center">
-                {[...Array(review.rating)].map((_, i) => (
-                  <i key={i} className="ri-star-fill fs-4"></i>
-                ))}
-              </span>
-              <hr />
-              <p className="name text-center">{review.name}</p>
+        {reviews.map((review, index) => {
+          // Determine if the card is in the middle position
+          const isMiddleCard = (currentSlide + 1) % reviews.length === index;
+          return (
+            <div
+              key={review.id}
+              className={`card-wrapper ${isMiddleCard ? "middle-card" : ""}`}
+            >
+              <div className="card">
+                <span>
+                  <i className="ri-double-quotes-l text-warning"></i>
+                </span>
+                <p>{review.text}</p>
+                <span className="text-center">
+                  {[...Array(review.rating)].map((_, i) => (
+                    <i key={i} className="ri-star-fill fs-4"></i>
+                  ))}
+                </span>
+                <hr />
+                <p className="name text-center">{review.name}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </Slider>
     </div>
   );

@@ -1,10 +1,10 @@
 .card-wrapper {
-    padding: 15px;
-    margin: 0 10px; /* Add horizontal margin to create space between cards */
-  }
+  padding: 15px;
+  margin: 0 10px; /* Add horizontal margin to create space between cards */
+}
 
 .card {
-  background-color: #f8f9fa;
+  background-color: #f8fdee; /* Green background */
   border-radius: 8px;
   padding: 20px;
   text-align: center;
@@ -13,6 +13,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Apply blur effect to cards that are not in the middle */
+.card-wrapper:not(.middle-card) .card {
+  filter: blur(3px);
+  opacity: 0.5;
 }
 
 .card p {
@@ -63,6 +71,15 @@
 
 .slick-next {
   right: -35px;
+}
+
+/* Effect for the middle card without hover */
+.middle-card .card {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  filter: none;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Responsive for small screens */

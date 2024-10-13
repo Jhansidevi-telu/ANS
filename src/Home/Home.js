@@ -8,8 +8,10 @@ import {
   FaLinkedinIn,
 } from "react-icons/fa";
 
-import g5 from "../assets/g5.jpg";
-import img1 from "../assets/img1.jpg";
+import g5 from "../images/IMG-20241011-WA0010.jpg";
+import img1 from "../assets/2151182444.jpg";
+import img2 from "../assets/img4.jpg";
+import img3 from "../images/IMG-20241011-WA0024.jpg";
 import videoSrc from "../assets/home-video.mp4";
 import Header from "../Header/Header";
 import "../Header/Header.css";
@@ -132,7 +134,7 @@ const Home = () => {
                   <div class="col-sm-6">
                     <div class="d-flex algin-items-center border-color px-3">
                       <h1 class="flex-shrink-0 dispaly-5 text-color mb-0 ">
-                        5
+                        15
                       </h1>
                       <div class="ps-4">
                         <p class="mb-0 contentFont">Years of</p>
@@ -182,31 +184,31 @@ const Home = () => {
                     alt="Service 1"
                   />
                   <div className="card-body text-center">
-                    <h5 className="card-title section-title ">Service Title 1</h5>
+                    <h3 className="card-title section-title ">Catering</h3>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
                 <div className="service-card d-flex flex-column">
                   <img
-                    src={img1}
+                    src={img2}
                     className="card-img-top flex-fill"
                     alt="Service 2"
                   />
                   <div className="card-body text-center">
-                    <h5 className="card-title section-title">Service Title 2</h5>
+                    <h3 className="card-title section-title">Suppliers</h3>
                   </div>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 mb-4">
                 <div className="service-card d-flex flex-column">
                   <img
-                    src={img1}
+                    src={img3}
                     className="card-img-top flex-fill"
                     alt="Service 3"
                   />
                   <div className="card-body text-center">
-                    <h5 className="card-title section-title ">Service Title 3</h5>
+                    <h3 className="card-title section-title ">Lighting</h3>
                   </div>
                 </div>
               </div>
@@ -218,7 +220,7 @@ const Home = () => {
                     alt="Service 4"
                   />
                   <div className="card-body text-center">
-                    <h5 className="card-title section-title">Service Title 4</h5>
+                    <h3 className="card-title section-title">Wedding Pavilion</h3>
                   </div>
                 </div>
               </div>
