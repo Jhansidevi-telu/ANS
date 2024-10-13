@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
+import { FaQuoteLeft } from "react-icons/fa";
 
 const reviews = [
   {
@@ -41,7 +42,7 @@ const SliderDown = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const settings = {
-    dots: true,
+    dots: false,
     arrows: true,
     infinite: true,
     speed: 500,
@@ -72,7 +73,6 @@ const SliderDown = () => {
 
   return (
     <div className="container">
-      <h2>Customer Reviews</h2>
       <Slider {...settings}>
         {reviews.map((review, index) => {
           // Determine if the card is in the middle position
@@ -83,17 +83,17 @@ const SliderDown = () => {
               className={`card-wrapper ${isMiddleCard ? "middle-card" : ""}`}
             >
               <div className="card">
-                <span>
-                  <i className="ri-double-quotes-l text-warning"></i>
+                <span className="fs-3">
+                  <FaQuoteLeft className="icon-color " /> 
                 </span>
                 <p>{review.text}</p>
                 <span className="text-center">
                   {[...Array(review.rating)].map((_, i) => (
-                    <i key={i} className="ri-star-fill fs-4"></i>
+                    <i key={i} className="ri-star-fill fs-5"></i>
                   ))}
                 </span>
                 <hr />
-                <p className="name text-center">{review.name}</p>
+                <p className="name text-center ">{review.name}</p>
               </div>
             </div>
           );

@@ -19,7 +19,7 @@
 
 /* Apply blur effect to cards that are not in the middle */
 .card-wrapper:not(.middle-card) .card {
-  filter: blur(3px);
+  filter: blur(2px);
   opacity: 0.5;
 }
 
@@ -46,7 +46,7 @@
 .name {
   font-size: 1rem;
   font-weight: bold;
-  color: #333;
+  color: #0e0e0e;
 }
 
 /* Carousel Dots */
@@ -76,7 +76,7 @@
 /* Effect for the middle card without hover */
 .middle-card .card {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  background-color: #f8fdee;
   filter: none;
   opacity: 1;
   transition: all 0.3s ease-in-out;
@@ -88,4 +88,9 @@
     padding: 15px;
     font-size: 1rem;
   }
+}
+
+
+.icon-color{
+  color:#8ac027
 }

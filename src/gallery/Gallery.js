@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Gallery.css";
-import image1 from "../images/IMG-20241011-WA0010.jpg"
+import image1 from "../images/IMG-20241011-WA0010.jpg";
 import image2 from "../images/IMG-20241011-WA0009.jpg";
 import image3 from "../images/IMG-20241011-WA0007.jpg";
 import image4 from "../images/IMG-20241011-WA0006.jpg";
@@ -22,7 +22,8 @@ import image19 from "../images/IMG-20241011-WA0036.jpg";
 import image20 from "../images/IMG-20241011-WA0038.jpg";
 import image21 from "../images/IMG-20241011-WA0041.jpg";
 import image22 from "../images/IMG-20241011-WA0044.jpg";
-import singleVideo from "../assets/20756701-hd_1920_1080_25fps.mp4"; 
+import singleVideo from "../assets/20756701-hd_1920_1080_25fps.mp4";
+import ScrollToTop from "../scrolltop/ScrollToTop";
 
 const Gallery = () => {
   const data = [
@@ -52,7 +53,7 @@ const Gallery = () => {
 
   const [model, setModel] = useState(false);
   const [tempimgSrc, setTempImgSrc] = useState("");
-  
+
   const videoRef = useRef(null);
 
   const getImg = (imgSrc) => {
@@ -97,10 +98,15 @@ const Gallery = () => {
       <div className="gallery">
         {data.map((item, index) => (
           <div className="pics" key={index} onClick={() => getImg(item.imgSrc)}>
-            <img src={item.imgSrc} style={{ width: "100%" }} alt="Gallery Item" />
+            <img
+              src={item.imgSrc}
+              style={{ width: "100%" }}
+              alt="Gallery Item"
+            />
           </div>
         ))}
       </div>
+      <ScrollToTop />
     </>
   );
 };

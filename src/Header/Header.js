@@ -41,12 +41,12 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link ${isHome ? "text-white" : "text-black"}`} href="#">
+                <a className={`nav-link ${isHome ? "text-white" : "text-black"}`} href="/#about">
                   About
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link ${isHome ? "text-white" : "text-black"}`} href="#">
+                <a className={`nav-link ${isHome ? "text-white" : "text-black"}`} href="/#services">
                   Services
                 </a>
               </li>
@@ -56,7 +56,7 @@ const Header = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className={`nav-link ${isHome ? "text-white" : "text-black"}`} href="#">
+                <a className={`nav-link ${isHome ? "text-white" : "text-black"}`} href="/#contact">
                   Contact
                 </a>
               </li>

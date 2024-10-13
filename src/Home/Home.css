@@ -3,7 +3,39 @@
   width: 100%;
   height: auto;
 }
+.video-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
 
+.video-blur {
+  filter: blur(5px); /* Adjust the blur level as needed */
+  width: 100%;
+  height: auto;
+}
+
+.video-text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  font-size: 2rem; /* Adjust the size as needed */
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
+}
+
+.logo-img {
+  width: 100px; /* Adjust the size of the logo */
+  height: auto;
+  margin-bottom: 10px; /* Space between the logo and the text */
+}
+
+.welcome-text {
+  font-size: 2rem;
+}
 .header-wrapper {
   position: absolute;
   top: 0;
@@ -75,19 +107,6 @@
 .button-color {
   background-color: #8ac027;
 }
-/* .service-item {
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.08);
-  transition: 0.5s;
-}
-.service-item:hover {
-  background: orange;
-}
-.service-item * {
-  transition: 0.5s;
-}
-.service-item:hover * {
-  color: white !important;
-} */
 
 .service-card1 {
   position: relative;
@@ -149,7 +168,7 @@
 }
 .service-card1 .card-content p {
   font-size: 16px;
-  margin-top:20px;
+  margin-top: 20px;
   font-weight: 400;
   color: #0e0e0e; /* White text */
 }
@@ -221,4 +240,21 @@
   .testimonials__grid {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+
+.contact-form .form-control:focus {
+  border-color: #8ac027; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(119, 255, 7, 0.5); /* Add shadow on focus */
+}
+
+.btn {
+  background-color: #8ac027; /* Darken button on hover */
+}
+.btn:hover {
+  background-color: #8ac027; /* Darken button on hover */
+  color: white; /* Change text color on hover */
+}
+.contact-form-container h2 {
+  color: #8ac027; /* Change the header color */
+  margin-bottom: 1rem; /* Add some space below the header */
 }
