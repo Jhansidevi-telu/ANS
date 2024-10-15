@@ -3,6 +3,10 @@
     position: relative;
     z-index: 1000;
   }
+
+  .nav-item {
+    font-family: "Josefin Sans", sans-serif;
+  }
   
   .Logo {
     width: 50px;
@@ -31,4 +35,35 @@
   .other-header .text-black {
     color: black;
   }
+
+  .navbar-brand {
+    font-family: "Abril Fatface", serif;
+  }
+
+  .navbar-toggler {
+    color: white;
+  }
+
+  .navbar-toggler-icon {
+    color: white;
+  }
+
+  .contact-info {
+    font-family: "Josefin Sans", sans-serif;
+  }
+
+  @media (width < 500px) {
+    .navbar-brand {
+      font-size: 15px;
+    }
+
+    .navbar-toggler {
+      color: white;
+    }
+
+    .navbar-toggler-icon {
+      color: white;
+    }
+  }
+
   

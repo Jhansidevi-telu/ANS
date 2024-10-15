@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import g5 from "../images/IMG-20241011-WA0010.jpg";
+import g4 from "../assets/IMG-20241011-WA0013.jpg";
 import img1 from "../assets/2151182444.jpg";
 import img2 from "../assets/img4.jpg";
 import img3 from "../images/IMG-20241011-WA0024.jpg";
@@ -13,21 +14,64 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import ScrollToTop from "../scrolltop/ScrollToTop";
 
 const Home = () => {
-  const [name, setName] = useState("");
-  const [phone, setPhone] = useState("");
-  const [message, setMessage] = useState("");
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [result, setResult] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setSubmitted(true);
-    setName("");
-    setPhone("");
-    setMessage("");
+  const formRef = useRef(null);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Create form data object
+    const formData = {
+      access_key: "6b9a067f-cf6d-4caf-aaa5-b4ed0b0d3041",
+      name,
+      phone,
+      message,
+    };
+
+    // Convert form data to JSON format
+    const json = JSON.stringify(formData);
+
+    // Show a waiting message
+    setResult('Please wait...');
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: json,
+      });
+
+      const resultJson = await response.json();
+
+      if (response.status === 200) {
+        setResult(resultJson.message);
+        setSubmitted(true);
+      } else {
+        setResult(resultJson.message);
+        setSubmitted(false);
+      }
+    } catch (error) {
+      setResult('Something went wrong!');
+      console.log(error);
+    }
+
+    // Clear form fields after successful submission
+    if (formRef.current) {
+      formRef.current.reset();
+    }
     setTimeout(() => {
-      setSubmitted(false);
+      setResult('');
     }, 3000);
   };
+
   useEffect(() => {
     // Smooth scroll to the about section if the URL has a hash
     if (window.location.hash) {
@@ -68,7 +112,7 @@ const Home = () => {
                   <div class="col-6 text-start">
                     <img
                       class="img-gluid rounded w-100 wow zoomIn"
-                      src={g5}
+                      src={g4}
                       alt="grid-1"
                     />
                   </div>
@@ -76,21 +120,21 @@ const Home = () => {
                     <img
                       class="img-gluid rounded w-75 wow zoomIn"
                       style={{ marginTop: "25%" }}
-                      src={g5}
+                      src={g4}
                       alt="grid-1"
                     />
                   </div>
                   <div class="col-6 text-end">
                     <img
                       class="img-gluid rounded w-75 wow zoomIn"
-                      src={g5}
+                      src={g4}
                       alt="grid-1"
                     />
                   </div>
                   <div class="col-6 text-start">
                     <img
                       class="img-gluid rounded w-100 wow zoomIn"
-                      src={g5}
+                      src={g4}
                       alt="grid-1"
                     />
                   </div>
@@ -100,7 +144,7 @@ const Home = () => {
                 <h4 class="  section-title text-color ff-secondary text-start  fw-normal">
                   About Us
                 </h4>
-                <h1 class="section-title mb-4">
+                <h1 class="touch1">
                   Welcome to Anusha Catering & Suppliers
                 </h1>
                 <p class=" contentFont mb-4">
@@ -253,7 +297,7 @@ const Home = () => {
                     alt="Service 1"
                   />
                   <div className="card-body text-center">
-                    <h3 className="card-title section-title ">Catering</h3>
+                    <h3 className="touch2">Catering</h3>
                   </div>
                 </div>
               </div>
@@ -265,7 +309,7 @@ const Home = () => {
                     alt="Service 2"
                   />
                   <div className="card-body text-center">
-                    <h3 className="card-title section-title">Suppliers</h3>
+                    <h3 className="touch2">Suppliers</h3>
                   </div>
                 </div>
               </div>
@@ -277,7 +321,7 @@ const Home = () => {
                     alt="Service 3"
                   />
                   <div className="card-body text-center">
-                    <h3 className="card-title section-title ">Lighting</h3>
+                    <h3 className="touch2">Lighting</h3>
                   </div>
                 </div>
               </div>
@@ -289,7 +333,7 @@ const Home = () => {
                     alt="Service 4"
                   />
                   <div className="card-body text-center">
-                    <h3 className="card-title section-title">
+                    <h3 className="touch2">
                       Wedding Pavilion
                     </h3>
                   </div>
@@ -301,7 +345,7 @@ const Home = () => {
         {/*Testimonials*/}
         <div class="container-xxl py-5">
           <div class="container">
-            <h1 className="text-center mb-4 section-title text-dark">
+            <h1 className="text-center mb-4 section-title text-color">
               Our Customer's Feedback
             </h1>
             <SliderDown />
@@ -316,7 +360,7 @@ const Home = () => {
           <div className="container d-flex justify-content-between align-items-center text-white">
             {/* Heading and Subheading Section */}
             <div>
-              <h5 className="section-title ff-secondary fw-normal mb-1 fs-2">
+              <h5 className="touch">
                 Get in Touch With Us Today!
               </h5>
             </div>
@@ -328,7 +372,7 @@ const Home = () => {
                 <h6 className="fw-bold mb-1">
                   <FaPhoneAlt className="mr-2" /> Call
                 </h6>
-                <p className="mb-0">+123-456-7890</p>
+                <p className="mb-0">+91 9949319515</p>
               </div>
 
               {/* Divider */}
@@ -346,7 +390,7 @@ const Home = () => {
                 <h6 className="fw-bold mb-1">
                   <FaMapMarkerAlt className="mr-2" /> Visit
                 </h6>
-                <p className="mb-0">123 Street Name, City, Country</p>
+                <p className="mb-0">2nd Bus Stop, P.M Palem, Visakhapatnam, Andhra Pradesh 530041</p>
               </div>
 
               {/* Divider */}
@@ -364,7 +408,7 @@ const Home = () => {
                 <h6 className="fw-bold mb-1">
                   <FaEnvelope className="mr-2" /> Email
                 </h6>
-                <p className="mb-0">info@example.com</p>
+                <p className="mb-0">prasadpothina1@gmail.com</p>
               </div>
             </div>
           </div>
@@ -384,10 +428,11 @@ const Home = () => {
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
               </div>
+
               <div className="col-lg-6 col-sm-12">
                 <div className="contact-form-container">
                   <h4 className="section-title">Contact Us</h4>
-                  <form className="contact-form" onSubmit={handleSubmit}>
+                  <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
                     <div className="mb-3">
                       <label htmlFor="name" className="form-label">
                         Your Name
@@ -408,14 +453,14 @@ const Home = () => {
                         Your Phone Number
                       </label>
                       <input
-                        type="tel" // Change type to 'tel'
+                        type="tel"
                         className="form-control"
-                        id="phone" // Update the id to 'phone'
-                        placeholder="Enter your phone number" // Change placeholder text
-                        value={phone} // Update state variable to store phone number
-                        onChange={(e) => setPhone(e.target.value)} // Update state handling
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
                         required
-                        aria-label="Your Phone Number" // Update aria-label
+                        aria-label="Your Phone Number"
                       />
                     </div>
 
@@ -434,13 +479,13 @@ const Home = () => {
                         aria-label="Message"
                       ></textarea>
                     </div>
-                    <button type="submit" className="btn ">
+                    <button type="submit" className="btn">
                       Send Message
                     </button>
                   </form>
-                  {submitted && (
+                  {result && (
                     <div className="alert alert-success mt-3">
-                      Message sent successfully!
+                      {result}
                     </div>
                   )}
                 </div>

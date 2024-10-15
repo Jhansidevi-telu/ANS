@@ -34,7 +34,10 @@
 }
 
 .welcome-text {
-  font-size: 2rem;
+  font-size: 6rem;
+  font-family: "Qwitcher Grypen", cursive;
+  font-weight: 400;
+  font-style: normal;
 }
 .header-wrapper {
   position: absolute;
@@ -94,9 +97,11 @@
 
 .section-title {
   font-family: "Abril Fatface", serif;
+  margin-bottom: 20px;
+  color: #8ac027;
 }
 .contentFont {
-  font-family: "Jost", sans-serif;
+  font-family: "Josefin Sans", sans-serif;
 }
 .border-color {
   border-left: 5px solid #8ac027;
@@ -228,6 +233,36 @@
 .section__container .card .name:hover {
   color: var(--primary-color);
 } */
+
+.touch {
+  font-family: "Abril Fatface", serif;
+  font-size: 30px;
+}
+
+.touch1 {
+  font-family: "Abril Fatface", serif;
+}
+
+.touch2 {
+  font-family: "Qwitcher Grypen", cursive;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 50px;
+}
+
+
+
+@media (width < 500px) {
+  .logo-img {
+    margin-top: 60px;
+    width: 50px;
+    height: auto;
+  }
+  
+  .welcome-text {
+    font-size: 30px;
+  }
+}
 
 @media (width < 900px) {
   .testimonials__grid {

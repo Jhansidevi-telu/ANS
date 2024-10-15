@@ -22,7 +22,7 @@ import image19 from "../images/IMG-20241011-WA0036.jpg";
 import image20 from "../images/IMG-20241011-WA0038.jpg";
 import image21 from "../images/IMG-20241011-WA0041.jpg";
 import image22 from "../images/IMG-20241011-WA0044.jpg";
-import singleVideo from "../assets/20756701-hd_1920_1080_25fps.mp4";
+import singleVideo from "../gallery/VID-20240707-WA0316.mp4";
 import ScrollToTop from "../scrolltop/ScrollToTop";
 
 const Gallery = () => {
