@@ -14,11 +14,11 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import ScrollToTop from "../scrolltop/ScrollToTop";
 
 const Home = () => {
-  const [name, setName] = useState('');
-  const [phone, setPhone] = useState('');
-  const [message, setMessage] = useState('');
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState("");
 
   const formRef = useRef(null);
 
@@ -37,14 +37,14 @@ const Home = () => {
     const json = JSON.stringify(formData);
 
     // Show a waiting message
-    setResult('Please wait...');
+    setResult("Please wait...");
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
         body: json,
       });
@@ -59,7 +59,7 @@ const Home = () => {
         setSubmitted(false);
       }
     } catch (error) {
-      setResult('Something went wrong!');
+      setResult("Something went wrong!");
       console.log(error);
     }
 
@@ -68,7 +68,7 @@ const Home = () => {
       formRef.current.reset();
     }
     setTimeout(() => {
-      setResult('');
+      setResult("");
     }, 3000);
   };
 
@@ -144,9 +144,7 @@ const Home = () => {
                 <h4 class="  section-title text-color ff-secondary text-start  fw-normal">
                   About Us
                 </h4>
-                <h1 class="touch1">
-                  Welcome to Anusha Catering & Suppliers
-                </h1>
+                <h1 class="section-title mb-3">Welcome to Anusha Catering & Suppliers</h1>
                 <p class=" contentFont mb-4">
                   Catering is the art of providing food and bevarge services to
                   a group of people for an event, occasion, or gathering. The
@@ -166,7 +164,7 @@ const Home = () => {
                 <div class="row g-4 mb-4">
                   <div class="col-sm-6">
                     <div class="d-flex algin-items-center border-color px-3">
-                      <h1 class="flex-shrink-0 dispaly-5 text-color mb-0 ">
+                      <h1 class="flex-shrink-0 dispaly-5 text-color mb-0 section-title">
                         15
                       </h1>
                       <div class="ps-4">
@@ -179,7 +177,7 @@ const Home = () => {
                   </div>
                   <div class="col-lg-6">
                     <div class="d-flex algin-items-center border-color px-3">
-                      <h1 class="flex-shrink-0 dispaly-5 text-color mb-0">
+                      <h1 class="flex-shrink-0 dispaly-5 text-color mb-0 section-title">
                         50+
                       </h1>
                       <div class="ps-4">
@@ -194,17 +192,11 @@ const Home = () => {
           </div>
         </div>
         {/*Services*/}
-        <div
-          id="services"
-          className="container-xxl py-1 align-items-center pb-5"
-        >
+        <div id="services" className="container-xxl py-1 pb-5">
           <div className="container">
-            {/* <h3 className="section-title mb-5 content-title ">
-              Our Commitment to Excellence
-            </h3> */}
             <div className="row g-4 justify-content-center">
               <div
-                className="col-lg-3 col-sm-6 wow fadeInUp"
+                className="col-lg-3 col-sm-6 d-flex justify-content-center wow fadeInUp"
                 data-wow-delay="0.1s"
               >
                 <div className="service-card1">
@@ -222,8 +214,9 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+
               <div
-                className="col-lg-3 col-sm-6 wow fadeInUp"
+                className="col-lg-3 col-sm-6 d-flex justify-content-center wow fadeInUp"
                 data-wow-delay="0.2s"
               >
                 <div className="service-card1">
@@ -243,7 +236,7 @@ const Home = () => {
               </div>
 
               <div
-                className="col-lg-3 col-sm-6 wow fadeInUp"
+                className="col-lg-3 col-sm-6 d-flex justify-content-center wow fadeInUp"
                 data-wow-delay="0.3s"
               >
                 <div className="service-card1">
@@ -259,8 +252,9 @@ const Home = () => {
                   </div>
                 </div>
               </div>
+
               <div
-                className="col-lg-3 col-sm-6 wow fadeInUp"
+                className="col-lg-3 col-sm-6 d-flex justify-content-center wow fadeInUp"
                 data-wow-delay="0.4s"
               >
                 <div className="service-card1">
@@ -279,6 +273,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+
         {/* Organized */}
         <div className="bg-body-tertiary py-5">
           <h1 className="text-center mb-4 section-title text-color">
@@ -297,7 +292,7 @@ const Home = () => {
                     alt="Service 1"
                   />
                   <div className="card-body text-center">
-                    <h3 className="touch2">Catering</h3>
+                    <h3 className="section-title">Catering</h3>
                   </div>
                 </div>
               </div>
@@ -309,7 +304,7 @@ const Home = () => {
                     alt="Service 2"
                   />
                   <div className="card-body text-center">
-                    <h3 className="touch2">Suppliers</h3>
+                    <h3 className="section-title">Suppliers</h3>
                   </div>
                 </div>
               </div>
@@ -321,7 +316,7 @@ const Home = () => {
                     alt="Service 3"
                   />
                   <div className="card-body text-center">
-                    <h3 className="touch2">Lighting</h3>
+                    <h3 className="section-title">Lighting</h3>
                   </div>
                 </div>
               </div>
@@ -333,9 +328,7 @@ const Home = () => {
                     alt="Service 4"
                   />
                   <div className="card-body text-center">
-                    <h3 className="touch2">
-                      Wedding Pavilion
-                    </h3>
+                    <h3 className="section-title">Wedding Pavilion</h3>
                   </div>
                 </div>
               </div>
@@ -357,24 +350,21 @@ const Home = () => {
           className="container-fluid p-4 d-none d-md-block"
           style={{ backgroundColor: "#8ac027" }}
         >
-          <div className="container d-flex justify-content-between align-items-center text-white">
+          <div className=" d-flex justify-content-between align-items-center text-white">
             {/* Heading and Subheading Section */}
-            <div>
-              <h5 className="touch">
-                Get in Touch With Us Today!
-              </h5>
-            </div>
+            <h5 className="section-title ff-secondary fw-normal mb-1 fs-3">
+              Get in Touch With Us Today!
+            </h5>
 
             {/* Contact Details Section */}
             <div className="d-flex">
               {/* Mobile Section */}
-              <div className="d-flex flex-column align-items-center mr-4">
+              <div className="d-flex flex-column align-items-center ">
                 <h6 className="fw-bold mb-1">
                   <FaPhoneAlt className="mr-2" /> Call
                 </h6>
-                <p className="mb-0">+91 9949319515</p>
+                <p className="mb-0 contentFont text-center">+91 9949319515</p>
               </div>
-
               {/* Divider */}
               <div
                 className="divider mx-3"
@@ -384,15 +374,15 @@ const Home = () => {
                   backgroundColor: "#fff",
                 }}
               ></div>
-
               {/* Address Section */}
-              <div className="d-flex flex-column align-items-center mr-4">
+              <div className="d-flex flex-column align-items-center ">
                 <h6 className="fw-bold mb-1">
                   <FaMapMarkerAlt className="mr-2" /> Visit
                 </h6>
-                <p className="mb-0">2nd Bus Stop, P.M Palem, Visakhapatnam, Andhra Pradesh 530041</p>
+                <p className="mb-0 contentFont text-center">
+                  2nd Bus Stop, P.M Palem, Visakhapatnam, Andhra Pradesh 530041
+                </p>
               </div>
-
               {/* Divider */}
               <div
                 className="divider mx-3"
@@ -402,13 +392,12 @@ const Home = () => {
                   backgroundColor: "#fff",
                 }}
               ></div>
-
               {/* Email Section */}
               <div className="d-flex flex-column align-items-center mr-4">
                 <h6 className="fw-bold mb-1">
                   <FaEnvelope className="mr-2" /> Email
                 </h6>
-                <p className="mb-0">prasadpothina1@gmail.com</p>
+                <p className="mb-0 contentFont">prasadpothina1@gmail.com</p>
               </div>
             </div>
           </div>
@@ -432,7 +421,11 @@ const Home = () => {
               <div className="col-lg-6 col-sm-12">
                 <div className="contact-form-container">
                   <h4 className="section-title">Contact Us</h4>
-                  <form ref={formRef} className="contact-form" onSubmit={handleSubmit}>
+                  <form
+                    ref={formRef}
+                    className="contact-form"
+                    onSubmit={handleSubmit}
+                  >
                     <div className="mb-3">
                       <label htmlFor="name" className="form-label">
                         Your Name
@@ -484,9 +477,7 @@ const Home = () => {
                     </button>
                   </form>
                   {result && (
-                    <div className="alert alert-success mt-3">
-                      {result}
-                    </div>
+                    <div className="alert alert-success mt-3">{result}</div>
                   )}
                 </div>
               </div>

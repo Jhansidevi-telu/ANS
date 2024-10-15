@@ -3,6 +3,7 @@
   margin: 0 10px; /* Add horizontal margin to create space between cards */
 }
 
+/* Main card styles */
 .card {
   background-color: #f8fdee; /* Green background */
   border-radius: 8px;
@@ -23,6 +24,7 @@
   opacity: 0.5;
 }
 
+/* Text styling within the card */
 .card p {
   font-size: 1.1rem;
   color: #333;
@@ -73,7 +75,7 @@
   right: -35px;
 }
 
-/* Effect for the middle card without hover */
+/* Effect for the middle card */
 .middle-card .card {
   transform: scale(1.05);
   background-color: #f8fdee;
@@ -88,9 +90,15 @@
     padding: 15px;
     font-size: 1rem;
   }
-  
+
+  /* Remove blur effect for non-middle cards on small screens */
+  .card-wrapper:not(.middle-card) .card {
+    filter: none;  /* Disable blur effect on small screens */
+    opacity: 1;    /* Ensure visibility */
+  }
 }
 
-.icon-color{
-  color:#8ac027
+/* Icon color */
+.icon-color {
+  color: #8ac027;
 }

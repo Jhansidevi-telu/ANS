@@ -2,6 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "./Header.css";
 import card from "../assets/ANSLogo.png";
+import { FaBars } from "react-icons/fa";
 
 const Header = () => {
   const location = useLocation();
@@ -23,16 +24,16 @@ const Header = () => {
             Anusha Catering & Suppliers
           </a>
           <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <FaBars className="text-light" size={24} />
+        </button>
           <div className="collapse navbar-collapse" id="navbarNavDropdown">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">

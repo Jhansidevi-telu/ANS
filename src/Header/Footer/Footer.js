@@ -6,17 +6,10 @@ import {
 
 const Footer = () => {
   return (
-    <div className="container-xxl bg-dark text-light py-1 ">
+    <div className="container-fluid bg-dark text-light py-1 ">
       <div className="row align-items-center ">
         <div className="col-md-6 align-items-center justify-content-center mt-2">
-          <p style={{
-           fontFamily: '"Abril Fatface", serif', 
-            fontSize: '14px',
-            color: 'white',
-            textAlign: 'center',
-            margin: '0',
-            padding: '0'
-          }}>
+          <p className="text-light contentFont">
             &copy; 2024 Anusha Catering & Suppliers. All rights reserved.
           </p>
         </div>

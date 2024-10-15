@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
 import { FaQuoteLeft } from "react-icons/fa";
+import "../Home/Home.css"
 
 const reviews = [
   {
@@ -41,6 +42,35 @@ const reviews = [
 const SliderDown = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // const settings = {
+  //   dots: false,
+  //   arrows: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 3,
+  //   slidesToScroll: 1,
+  //   autoplay: true,
+  //   autoplaySpeed: 3000,
+  //   beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
+  //   responsive: [
+  //     {
+  //       breakpoint: 1024,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         slidesToScroll: 1,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         slidesToScroll: 1,
+  //         dots: true,
+  //         arrows: false,
+  //       },
+  //     },
+  //   ],
+  // };
   const settings = {
     dots: false,
     arrows: true,
@@ -62,15 +92,17 @@ const SliderDown = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1,  // Show only one card on small screens
           slidesToScroll: 1,
           dots: true,
           arrows: false,
+          centerMode: true,  // Ensure the card is centered
+          centerPadding: '20px',  // Padding around the center card for better visibility
         },
       },
     ],
   };
-
+  
   return (
     <div className="container">
       <Slider {...settings}>
@@ -80,20 +112,20 @@ const SliderDown = () => {
           return (
             <div
               key={review.id}
-              className={`card-wrapper ${isMiddleCard ? "middle-card" : ""}`}
+              className={`card-wrapper ${isMiddleCard ? "middle-card" : ""} `}
             >
               <div className="card">
                 <span className="fs-3">
                   <FaQuoteLeft className="icon-color " /> 
                 </span>
-                <p>{review.text}</p>
-                <span className="text-center">
+                <p className="contentFont">{review.text}</p>
+                <span className="text-center ">
                   {[...Array(review.rating)].map((_, i) => (
                     <i key={i} className="ri-star-fill fs-5"></i>
                   ))}
                 </span>
                 <hr />
-                <p className="name text-center ">{review.name}</p>
+                <p className="name text-center contentFont ">{review.name}</p>
               </div>
             </div>
           );
