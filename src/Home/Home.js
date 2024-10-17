@@ -71,7 +71,7 @@ const Home = () => {
       setResult("");
     }, 3000);
   };
-
+console.log(submitted)
   useEffect(() => {
     // Smooth scroll to the about section if the URL has a hash
     if (window.location.hash) {
@@ -415,6 +415,7 @@ const Home = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                   title="Location of Anusha Caterers & Lighting Suppliers on Google Maps"
                 ></iframe>
               </div>
 

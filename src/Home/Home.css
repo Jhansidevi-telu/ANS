@@ -10,7 +10,7 @@
 }
 
 .video-blur {
-  filter: blur(5px); /* Adjust the blur level as needed */
+  filter: blur(2px); /* Adjust the blur level as needed */
   width: 100%;
   height: auto;
 }
