@@ -9,17 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/*"
-          element={
-            <>
-              <Header />
-              <Routes>
-                <Route path="/gallery" element={<Gallery />} />
-              </Routes>
-            </>
-          }
-        />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
       <Footer />
     </BrowserRouter>

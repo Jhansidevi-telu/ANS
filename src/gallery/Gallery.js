@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Gallery.css";
+import "../gallery/Gallery.css";
 import image1 from "../images/IMG-20241011-WA0010.jpg";
 import image2 from "../images/IMG-20241011-WA0009.jpg";
 import image3 from "../images/IMG-20241011-WA0007.jpg";
@@ -24,6 +24,7 @@ import image21 from "../images/IMG-20241011-WA0041.jpg";
 import image22 from "../images/IMG-20241011-WA0044.jpg";
 import singleVideo from "../gallery/VID-20240707-WA0316.mp4";
 import ScrollToTop from "../scrolltop/ScrollToTop";
+import Header from "../Header/Header";
 
 const Gallery = () => {
   const data = [
@@ -75,7 +76,7 @@ const Gallery = () => {
 
   return (
     <>
-      {/* Banner section with the single video */}
+      <Header />
       <div className="banner">
         <video className="banner-video" ref={videoRef} autoPlay muted loop>
           <source src={singleVideo} type="video/mp4" />
