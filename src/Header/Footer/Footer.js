@@ -15,7 +15,7 @@ const Footer = () => {
         </div>
         <div className="col-md-6 text-md-end text-center">
           <a
-            href="https://www.facebook.com/prasad.pothina.56?rdid=JuEMiIHjst97QMhu"
+            href="https://www.facebook.com/prasad.pothina.56"
             className="text-light mx-2"
             target="_blank"
             rel="noopener noreferrer"
@@ -24,7 +24,7 @@ const Footer = () => {
           </a>
 
           <a
-            href="https://www.instagram.com/anusha_events515/?igsh=MTJ6cnc0MGU3a25ieQ%3D%3D"
+            href="https://www.instagram.com/anusha_events515/"
             className="text-light mx-2"
             target="_blank"
             rel="noopener noreferrer"
