@@ -5,7 +5,7 @@
 
 /* Main card styles */
 .card {
-  background-color: #f8fdee; /* Green background */
+  background-color: #FFEAC5; /* Green background */
   border-radius: 8px;
   padding: 20px;
   text-align: center;
@@ -78,7 +78,7 @@
 /* Effect for the middle card */
 .middle-card .card {
   transform: scale(1.05);
-  background-color: #f8fdee;
+  background-color: #FFEAC5;
   filter: none;
   opacity: 1;
   transition: all 0.3s ease-in-out;
@@ -100,5 +100,5 @@
 
 /* Icon color */
 .icon-color {
-  color: #8ac027;
+  color: #603F26;
 }

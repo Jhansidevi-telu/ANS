@@ -1,16 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
-import g5 from "../images/IMG-20241011-WA0010.jpg";
-import g4 from "../assets/IMG-20241011-WA0013.jpg";
-import img1 from "../assets/2151182444.jpg";
-import img2 from "../assets/img4.jpg";
-import img3 from "../images/IMG-20241011-WA0024.jpg";
-import videoSrc from "../assets/home-video.mp4";
-import logoSrc from "../assets/ANSLogo.png";
+import { useNavigate } from "react-router-dom";
+import g4 from "../assets/4X5.jpg";
+import img90 from "../assets/3x5 copy.jpg";
+import Google from "../assets/Google_Play_Store_badge_EN.svg.webp";
+import imageSrc from "../assets/fresh-gourmet-meal-beef-taco-salad-plate-generated-by-ai.jpg";
 import Header from "../Header/Header";
 import "../Header/Header.css";
 import "./Home.css";
 import SliderDown from "../Header/Slider";
-import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import ScrollToTop from "../scrolltop/ScrollToTop";
 
 const Home = () => {
@@ -18,6 +15,7 @@ const Home = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const navigate = useNavigate();
   const [result, setResult] = useState("");
 
   const formRef = useRef(null);
@@ -71,7 +69,7 @@ const Home = () => {
       setResult("");
     }, 3000);
   };
-console.log(submitted)
+  console.log(submitted);
   useEffect(() => {
     // Smooth scroll to the about section if the URL has a hash
     if (window.location.hash) {
@@ -90,19 +88,29 @@ console.log(submitted)
           <Header />
         </div>
         {/*Banner Section*/}
-        <div className="video-container position-relative">
-          <video className="d-block w-100 video-blur" autoPlay loop muted>
-            <source src={videoSrc} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="image-container position-relative d-flex align-items-center justify-content-center text-center">
+          <img
+            src={imageSrc}
+            alt="Banner"
+            className="d-block w-100 banner-image"
+          />
 
-          <div className="video-text-overlay">
-            <img src={logoSrc} alt="Logo" className="logo-img" />
-            <div className="welcome-text">
-              Welcome to Anusha Catering and Suppliers
-            </div>
+          {/* Black overlay layer */}
+          <div className="image-overlay"></div>
+
+          <div className="image-text-overlay">
+            <div className="welcome-text">Enjoy our</div>
+            <div className="welcome-text1">Delicious Meal</div>
+            <button
+              type="button"
+              className="btn1"
+              onClick={() => navigate("/menu")}
+            >
+              View Our Menu
+            </button>
           </div>
         </div>
+
         {/*About*/}
         <div id="about" class="container-xxl py-5">
           <div class="container">
@@ -120,14 +128,15 @@ console.log(submitted)
                     <img
                       class="img-gluid rounded w-75 wow zoomIn"
                       style={{ marginTop: "25%" }}
-                      src={g4}
+                      src={img90}
                       alt="grid-1"
                     />
                   </div>
                   <div class="col-6 text-end">
                     <img
                       class="img-gluid rounded w-75 wow zoomIn"
-                      src={g4}
+                      style={{ marginTop: "-25%" }}
+                      src={img90}
                       alt="grid-1"
                     />
                   </div>
@@ -144,28 +153,32 @@ console.log(submitted)
                 <h4 class="  section-title text-color ff-secondary text-start  fw-normal">
                   About Us
                 </h4>
-                <h1 class="section-title mb-3">Welcome to Anusha Catering & Suppliers</h1>
+                <h1 class="section-title mb-3">
+                  Welcome to Bhimavaram Delicious Biryanis
+                </h1>
                 <p class=" contentFont mb-4">
-                  Catering is the art of providing food and bevarge services to
-                  a group of people for an event, occasion, or gathering. The
-                  success of any event depends on the quality of food and
-                  beverage served, and the overall experience it offers to the
-                  guests. Catering services must be tailored to meet the
-                  specific needs of each event, and a good catering.
+                  Bhimavaram Delicious Biryanis is a popular restaurant located
+                  in Tagarapuvalasa, Visakhapatnam, known for serving a wide
+                  variety of mouth-watering dishes. From authentic Andhra-style
+                  biryanis to crispy starters, sizzling tandoori specials,
+                  flavorful noodles, and fried rice — we have something for
+                  everyone. Our dishes are prepared with fresh ingredients and
+                  traditional recipes to ensure rich taste and quality in every
+                  bite. You can order your favorite meals easily through Zomato
+                  and Swiggy, or directly from our own mobile app – Bhimavaram
+                  Delicious Biryanis App – for quicker service and exclusive
+                  deals. Whether you're dining at home with family or planning a
+                  gathering with friends, our food is perfect for every
+                  occasion. We take pride in fast delivery, hygienic
+                  preparation, and customer satisfaction. Experience the true
+                  flavors of Bhimavaram right here in Visakhapatnam.
                 </p>
-                <p class=" contentFont mb-4">
-                  We provide high-quality, customizable catering options to suit
-                  any event, from intimate gatherings to large scale
-                  celebrations. We also supply essential event quipment like
-                  tent houses, lighting and more to ensure every occasion is
-                  perfectly excuted. We serve to make every event not just
-                  successful but truly memorable for our clients.
-                </p>
+
                 <div class="row g-4 mb-4">
                   <div class="col-sm-6">
                     <div class="d-flex algin-items-center border-color px-3">
                       <h1 class="flex-shrink-0 dispaly-5 text-color mb-0 section-title">
-                        15
+                        5
                       </h1>
                       <div class="ps-4">
                         <p class="mb-0 contentFont">Years of</p>
@@ -191,6 +204,7 @@ console.log(submitted)
             </div>
           </div>
         </div>
+
         {/*Services*/}
         <div id="services" className="container-xxl py-1 pb-5">
           <div className="container">
@@ -242,11 +256,11 @@ console.log(submitted)
                 <div className="service-card1">
                   <div className="text-center">
                     <div className="card-content">
-                      <h5 className="section-title">Tailored Event Planning</h5>
+                      <h5 className="section-title">Online Order</h5>
                       <p className="contentFont">
-                        From intimate gatherings to large-scale events, we
-                        tailor our services to meet your vision and ensure
-                        flawless execution.
+                        From quick individual meals to large family feasts, we
+                        tailor every order to match your cravings — ensuring
+                        hot, delicious food delivered fresh to your doorstep.
                       </p>
                     </div>
                   </div>
@@ -274,67 +288,6 @@ console.log(submitted)
           </div>
         </div>
 
-        {/* Organized */}
-        <div className="bg-body-tertiary py-5">
-          <h1 className="text-center mb-4 section-title text-color">
-            Our Services
-          </h1>
-          <h3 className="text-center mb-4 contentFont">
-            Explore our diverse offerings to create a seamless event experience
-          </h3>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-3 col-md-6 mb-4">
-                <div className="service-card d-flex flex-column">
-                  <img
-                    src={img1}
-                    className="card-img-top flex-fill"
-                    alt="Service 1"
-                  />
-                  <div className="card-body text-center">
-                    <h3 className="section-title">Catering</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 mb-4">
-                <div className="service-card d-flex flex-column">
-                  <img
-                    src={img2}
-                    className="card-img-top flex-fill"
-                    alt="Service 2"
-                  />
-                  <div className="card-body text-center">
-                    <h3 className="section-title">Suppliers</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 mb-4">
-                <div className="service-card d-flex flex-column">
-                  <img
-                    src={img3}
-                    className="card-img-top flex-fill"
-                    alt="Service 3"
-                  />
-                  <div className="card-body text-center">
-                    <h3 className="section-title">Lighting</h3>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-3 col-md-6 mb-4">
-                <div className="service-card d-flex flex-column">
-                  <img
-                    src={g5}
-                    className="card-img-top flex-fill"
-                    alt="Service 4"
-                  />
-                  <div className="card-body text-center">
-                    <h3 className="section-title">Wedding Pavilion</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         {/*Testimonials*/}
         <div class="container-xxl py-5">
           <div class="container">
@@ -344,78 +297,44 @@ console.log(submitted)
             <SliderDown />
           </div>
         </div>
-        {/* Contact */}
-        <div
-          id="contact"
-          className="container-fluid p-4 d-none d-md-block"
-          style={{ backgroundColor: "#8ac027" }}
-        >
-          <div className=" d-flex justify-content-between align-items-center text-white">
-            {/* Heading and Subheading Section */}
-            <h5 className="section-title ff-secondary fw-normal mb-1 fs-3">
-              Get in Touch With Us Today!
-            </h5>
 
-            {/* Contact Details Section */}
-            <div className="d-flex">
-              {/* Mobile Section */}
-              <div className="d-flex flex-column align-items-center ">
-                <h6 className="fw-bold mb-1">
-                  <FaPhoneAlt className="mr-2" /> Call
-                </h6>
-                <p className="mb-0 contentFont text-center">+91 9949319515</p>
-              </div>
-              {/* Divider */}
-              <div
-                className="divider mx-3"
-                style={{
-                  width: "2px",
-                  height: "50px",
-                  backgroundColor: "#fff",
-                }}
-              ></div>
-              {/* Address Section */}
-              <div className="d-flex flex-column align-items-center ">
-                <h6 className="fw-bold mb-1">
-                  <FaMapMarkerAlt className="mr-2" /> Visit
-                </h6>
-                <p className="mb-0 contentFont text-center">
-                  2nd Bus Stop, P.M Palem, Visakhapatnam, Andhra Pradesh 530041
-                </p>
-              </div>
-              {/* Divider */}
-              <div
-                className="divider mx-3"
-                style={{
-                  width: "2px",
-                  height: "50px",
-                  backgroundColor: "#fff",
-                }}
-              ></div>
-              {/* Email Section */}
-              <div className="d-flex flex-column align-items-center mr-4">
-                <h6 className="fw-bold mb-1">
-                  <FaEnvelope className="mr-2" /> Email
-                </h6>
-                <p className="mb-0 contentFont">prasadpothina1@gmail.com</p>
-              </div>
+        {/* App */}
+        <div
+          className="container-fluid bg-brown text-white"
+          style={{ height: "auto", padding: "20px 0" }}
+        >
+          <div className="row w-100 align-items-center">
+            {/* Left Text */}
+            <div className="col-md-6 col-12 text-start px-4 mb-3 mb-md-0 resto">
+              <h3 className="mb-2">Order the food on</h3>
+              <h3 className="mb-0">Bhimavaram Delicious Biryanis</h3>
+            </div>
+
+            {/* Right Image */}
+            <div className="col-md-6 col-12 d-flex justify-content-center justify-content-md-end px-4">
+              <img
+                src={Google} // Replace with your actual image import
+                alt="Delicious Biryani"
+                className="google"
+              />
             </div>
           </div>
         </div>
+
         {/* Contact Form*/}
         <div className="container-xxl bg-light py-2 ">
           <div className="container">
             <div className="row">
               <div className="col-lg-6 col-sm-12">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.7305905916432!2d83.34257537421958!3d17.804354390661263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x11439a67374d7327%3A0x46ea10d91ee0640d!2sAnusha%20Caterers%20%26%20Lighting%20Suppliers!5e0!3m2!1sen!2sin!4v1728241149958!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3796.280709502134!2d83.41410017463855!3d17.91905658727255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3959493083c79d%3A0x3d639e2bb4df0e1!2sDelicious%20Biryani&#39;s!5e0!3m2!1sen!2sin!4v1750441597130!5m2!1sen!2sin"
                   height="450"
                   width="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                   title="Location of Anusha Caterers & Lighting Suppliers on Google Maps"
+                  title="Location of Bhimavaram Delicious Biryanis on Google Maps"
                 ></iframe>
               </div>
 

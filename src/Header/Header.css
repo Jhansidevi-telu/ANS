@@ -1,69 +1,67 @@
-/* Common styles for all headers */
+/* Common header styling */
 .header {
-    position: relative;
-    z-index: 1000;
-  }
+  position: relative;
+  z-index: 1000;
+  background-color: black !important;
+}
 
-  .nav-item {
-    font-family: "Josefin Sans", sans-serif;
-  }
-  
-  .Logo {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .divider {
-    margin: 0 20px;
-  }
-  
-  /* Styles for the home page header */
-  .home-header {
-    background-color: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(5px);
-  }
-  
-  .home-header .text-white {
-    color: white;
-  }
-  
-  /* Styles for other pages (gallery, etc.) */
-  .other-header {
-    background-color: white;
-  }
-  
-  .other-header .text-black {
-    color: black;
-  }
+.nav-item {
+  font-family: "Josefin Sans", sans-serif;
+}
 
+.Logo {
+  width: 60px;
+  height: 60px;
+}
+
+.divider {
+  margin: 0 20px;
+}
+
+/* Make everything white */
+.navbar,
+.navbar a,
+.navbar-brand,
+.nav-link,
+.contact-info,
+.contact-info p {
+  color: white !important;
+}
+
+.nav-link:hover {
+  color: #f0ad4e !important; /* optional gold hover */
+}
+
+/* Navbar brand font */
+.navbar-brand {
+  font-family: "Abril Fatface", serif;
+}
+
+/* Toggler icon color */
+.navbar-toggler {
+  color: white !important;
+  border: none;
+}
+
+.navbar-toggler-icon {
+  color: white !important;
+}
+
+.contact-info {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Mobile adjustments */
+@media (width < 500px) {
   .navbar-brand {
-    font-family: "Abril Fatface", serif;
+    font-size: 15px;
   }
 
   .navbar-toggler {
-    color: white;
+    color: white !important;
   }
 
   .navbar-toggler-icon {
-    color: white;
+    color: white !important;
   }
-
-  .contact-info {
-    font-family: "Josefin Sans", sans-serif;
-  }
-
-  @media (width < 500px) {
-    .navbar-brand {
-      font-size: 15px;
-    }
-
-    .navbar-toggler {
-      color: white;
-    }
-
-    .navbar-toggler-icon {
-      color: white;
-    }
-  }
-
-  
+}

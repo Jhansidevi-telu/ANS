@@ -3,42 +3,71 @@
   width: 100%;
   height: auto;
 }
-.video-container {
+
+.image-container {
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.video-blur {
-  filter: blur(2px); /* Adjust the blur level as needed */
+.banner-image {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  display: block;
 }
 
-.video-text-overlay {
+/* Dark overlay */
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Adjust opacity */
+  z-index: 1;
+}
+
+/* Text over the overlay */
+.image-text-overlay {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  left: 5%;
+  transform: translateY(-50%);
   color: white;
-  font-size: 2rem; /* Adjust the size as needed */
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow for better readability */
-}
-
-.logo-img {
-  width: 100px; /* Adjust the size of the logo */
-  height: auto;
-  margin-bottom: 10px; /* Space between the logo and the text */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 2;
+  /* above the overlay */
 }
 
 .welcome-text {
-  font-size: 6rem;
-  font-family: "Qwitcher Grypen", cursive;
-  font-weight: 400;
+  font-size: 5rem;
+  font-family: "Macondo", cursive;
+  font-weight: 200;
   font-style: normal;
+  color: #fff;
 }
+
+.logo-img {
+  width: 100px;
+  /* Adjust the size of the logo */
+  height: auto;
+  margin-bottom: 10px;
+  /* Space between the logo and the text */
+}
+
+.welcome-text1 {
+  font-size: 5rem;
+  font-family: "Macondo", cursive;
+  font-weight: 200;
+  font-style: normal;
+  margin-top: -20px;
+}
+
 .header-wrapper {
   position: absolute;
   top: 0;
@@ -58,29 +87,40 @@
   width: 100%;
   height: 620px;
 }
+
 .service-card {
   position: relative;
   border-radius: 10px;
-  overflow: hidden; /* Ensures the image does not overflow the card */
-  transition: transform 0.3s; /* Optional: Smooth transition for hover effect */
+  overflow: hidden;
+  /* Ensures the image does not overflow the card */
+  transition: transform 0.3s;
+  /* Optional: Smooth transition for hover effect */
 }
 
 .card-img-top {
-  width: 100%; /* Ensures the image fills the width of the card */
-  height: 320px; /* Adjust height as needed */
-  object-fit: cover; /* Ensures the image covers the card */
-  transition: filter 0.3s; /* Smooth transition for filter */
+  width: 100%;
+  /* Ensures the image fills the width of the card */
+  height: 320px;
+  /* Adjust height as needed */
+  object-fit: cover;
+  /* Ensures the image covers the card */
+  transition: filter 0.3s;
+  /* Smooth transition for filter */
 }
 
 .card-body {
   position: absolute;
-  bottom: 0; /* Positions the title at the bottom of the card */
+  bottom: 0;
+  /* Positions the title at the bottom of the card */
   left: 0;
   right: 0;
   color: white;
-  padding: 10px; /* Padding for title */
-  text-align: center; /* Center-align the title */
-  transition: transform 0.3s; /* Smooth transition for title */
+  padding: 10px;
+  /* Padding for title */
+  text-align: center;
+  /* Center-align the title */
+  transition: transform 0.3s;
+  /* Smooth transition for title */
 }
 
 /* Hover effect */
@@ -90,32 +130,39 @@
 
 .service-card:hover .card-body {
   transform: translateY(-50%);
-  top: 50%; /* Center vertically */
+  top: 50%;
+  /* Center vertically */
   background-color: transparent;
   color: white;
 }
 
 .section-title {
-  font-family: "Abril Fatface", serif;
+  font-family: "DM Serif Display", serif;
 }
-.contentFont ,.contact-form{
+
+.contentFont,
+.contact-form {
   font-family: "Josefin Sans", sans-serif;
 }
+
 .border-color {
-  border-left: 5px solid #8ac027;
+  border-left: 5px solid #603F26;
 }
+
 .text-color {
-  color: #8ac027;
+  color: #603F26;
 }
+
 .button-color {
-  background-color: #8ac027;
+  background-color: #603F26;
 }
 
 .service-card1 {
   position: relative;
   width: 250px;
   height: 250px;
-  background: #f8fdee; /* Initial card background color */
+  background: #FFEAC5;
+  /* Initial card background color */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -123,8 +170,10 @@
   font-weight: bold;
   border-radius: 15px;
   cursor: pointer;
-  overflow: hidden; /* Hide overflow for pseudo-elements */
-  transition: background 0.5s; /* Smooth background transition */
+  overflow: hidden;
+  /* Hide overflow for pseudo-elements */
+  transition: background 0.5s;
+  /* Smooth background transition */
 }
 
 .service-card1::before,
@@ -133,64 +182,113 @@
   content: "";
   width: 20%;
   height: 20%;
-  background-color: #8ac027; /* Initial background color for pseudo-elements */
+  background-color: #603F26;
+  /* Initial background color for pseudo-elements */
   transition: all 0.5s;
-  z-index: 0; /* Ensure pseudo-elements are behind the text */
+  z-index: 0;
+  /* Ensure pseudo-elements are behind the text */
+  color: white;
 }
+
+.service-card1:hover .card-content h5,
+.service-card1:hover .card-content p {
+  color: #ffffff;
+  /* White text on hover */
+}
+
 
 .service-card1::before {
   top: 0;
   right: 0;
-  border-radius: 0 15px 0 100%; /* Rounded corners */
+  border-radius: 0 15px 0 100%;
+  /* Rounded corners */
 }
 
 .service-card1::after {
   bottom: 0;
   left: 0;
-  border-radius: 0 100% 0 15px; /* Rounded corners */
+  border-radius: 0 100% 0 15px;
+  /* Rounded corners */
+  color: white;
 }
 
 .service-card1:hover::before,
 .service-card1:hover::after {
-  width: 100%; /* Expand background on hover */
+  width: 100%;
+  /* Expand background on hover */
   height: 100%;
-  border-radius: 15px; /* Full rounding */
-  background-color: #8ac027; /* Change background color on hover */
-  transition: all 0.5s; /* Smooth transition */
+  border-radius: 15px;
+  /* Full rounding */
+  background-color: #603F26;
+  /* Change background color on hover */
+  transition: all 0.5s;
+  /* Smooth transition */
+
 }
 
 .service-card1 .card-content {
-  position: relative; /* Ensure text is positioned above pseudo-elements */
-  z-index: 1; /* Ensure the text stays above the hover background */
-  color: #0e0e0e; /* White text */
+  position: relative;
+  /* Ensure text is positioned above pseudo-elements */
+  z-index: 1;
+  /* Ensure the text stays above the hover background */
+  color: white;
   padding: 10px;
 }
+
 .service-card1 .card-content h5 {
   font-size: 20px;
-  color: #0e0e0e; /* White text */
+  color: #0e0e0e;
+  /* White text */
 }
+
 .service-card1 .card-content p {
   font-size: 16px;
   margin-top: 20px;
   font-weight: 400;
-  color: #0e0e0e; /* White text */
+  color: #0e0e0e;
+  /* White text */
 }
 
 .service-card1:hover .card-content {
-  opacity: 1; /* Keep text fully visible on hover */
+  opacity: 1;
+  /* Keep text fully visible on hover */
+
 }
 
+.bg-brown {
+  background-color: #603F26;
+}
 
+.google {
+  max-height: 100px;
+  max-width: 100%;
+  object-fit: contain;
+  margin-left: 50px;
+}
+
+.resto {
+  font-family: "Macondo", cursive;
+}
 
 @media (width < 500px) {
-  .logo-img {
-    margin-top: 60px;
-    width: 50px;
-    height: auto;
+  .image-container {
+    height: 60vh;
   }
-  
+
+  .image-text-overlay {
+    top: 35%;
+    left: 5%;
+    transform: translateY(-35%);
+  }
+
   .welcome-text {
-    font-size: 30px;
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .logo-img {
+    width: 50px;
+    margin-top: 40px;
   }
 }
 
@@ -208,18 +306,76 @@
 }
 
 .contact-form .form-control:focus {
-  border-color: #8ac027; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(119, 255, 7, 0.5); /* Add shadow on focus */
+  border-color: #603F26;
+  /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(96, 63, 38, 0.5);
+
 }
 
 .btn {
-  background-color: #8ac027; /* Darken button on hover */
+  background-color: #603F26;
+  /* Darken button on hover */
+  color: #FFEAC5;
 }
+
+.btn1 {
+  background-color: #FFEAC5;
+  padding: 10px;
+  border-radius: 10px;
+  color: #603F26;
+  font-family: "Macondo", cursive;
+}
+
 .btn:hover {
-  background-color: #8ac027; /* Darken button on hover */
-  color: white; /* Change text color on hover */
+  background-color: #603F26;
+  /* Darken button on hover */
+  color: white;
+  /* Change text color on hover */
 }
+
 .contact-form-container h2 {
-  color: #8ac027; /* Change the header color */
-  margin-bottom: 1rem; /* Add some space below the header */
+  color: #603F26;
+  /* Change the header color */
+  margin-bottom: 1rem;
+  /* Add some space below the header */
+}
+
+@media (max-width: 768px) {
+  .image-container {
+    height: 100vh;
+  }
+
+  .banner-image {
+    height: 100vh;
+    object-fit: cover;
+  }
+
+  .image-text-overlay {
+    top: 40%;
+    left: 5%;
+    transform: translateY(-40%);
+  }
+
+  .welcome-text {
+    font-size: 3rem;
+  }
+
+  .welcome-text1 {
+    font-size: 3rem;
+    margin-top: 3px;
+  }
+
+  .logo-img {
+    width: 60px;
+    margin-top: 30px;
+  }
+
+  .google {
+    max-height: 80px;
+    margin-left: 0;
+  }
+
+  .resto h3 {
+    font-size: 1.3rem;
+  }
 }
